@@ -39,7 +39,7 @@ kubectl apply -f initialize_helm_rbac.yaml
 
 ## Install Bitnami MySQL
 
-for the simplest installaton, just run:
+For the simplest installaton, just run:
 
 ```bash
 helm install --name todo-mysql stable/mysql
