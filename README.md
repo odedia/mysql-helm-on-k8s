@@ -6,7 +6,7 @@ Make sure you have helm installed.
 
 For Mac with Homebrew, run the following:
 
-``bash
+```bash
 brew install kubernetes-helm
 ```
 
