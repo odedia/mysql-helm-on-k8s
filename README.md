@@ -1,8 +1,7 @@
-# MySQL helm chart on Kubernetes
+### MySQL helm chart on Kubernetes
 This README describes how to install MySQL on a kubernetes cluster, based on the Bitnami Helm chart. 
 
 # Install helm
-
 Make sure you have helm installed.
 
 For Mac with Homebrew, run the following:
@@ -59,5 +58,6 @@ subjects:
 Apply the yaml file:
 
 ```bash
-kubectl apply -f rbac.yml
+kubectl apply -f initialize_helm_rbac.yaml
 ```
+
