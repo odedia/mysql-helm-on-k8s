@@ -1,7 +1,7 @@
-### MySQL helm chart on Kubernetes
+# MySQL helm chart on Kubernetes
 This README describes how to install MySQL on a kubernetes cluster, based on the Bitnami Helm chart. 
 
-# Install helm
+## Install helm
 Make sure you have helm installed.
 
 For Mac with Homebrew, run the following:
@@ -28,34 +28,10 @@ Or simply run a script:
 curl -L https://git.io/get_helm.sh | bash
 ```
 
-# Setup tiller
+## Setup tiller
 Tiller is the server-side component for helm on the Kubernetes cluster. Although it will be removed in the future versions of helm, it is still needed for most Charts out there.
 
-Setup an RBAC yaml file for tiller:
-
-```
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: tiller
-  namespace: kube-system
----
-apiVersion: rbac.authorization.k8s.io/v1beta1
-kind: ClusterRoleBinding
-metadata:
-  name: tiller
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: cluster-admin
-subjects:
-  - kind: ServiceAccount
-    name: tiller
-    namespace: kube-system
-```
-
-Apply the yaml file:
+Apply the included RBAC yaml file for tiller:
 
 ```bash
 kubectl apply -f initialize_helm_rbac.yaml
